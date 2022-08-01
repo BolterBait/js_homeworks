@@ -1482,12 +1482,53 @@ const users = [
     gender: 'female',
   },
 ];
+// const getTotalBalanceByGender = (users, gender) =>
+//   users
+//     .filter(user => user.gender === gender)
+//     .reduce((totalBalance, user) => {
+//       return totalBalance + user.balance;
+//     }, 0);
 
-const sortByDescendingFriendCount = users =>
-  users.sort(
-    (firstUser, secondUser) =>
-      secondUser.friends.length - firstUser.friends.length,
-  );
+// const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+//   return previousValue + number;
+// }, 0);
+
+// students.reduce((total, student) => {
+//   return total + student.score;
+// }, 0);
+
+// const sortByDescendingFriendCount = users =>
+//   [...users].sort(
+//     (firstUser, secondUser) =>
+//       secondUser.friends.length - firstUser.friends.length,
+//   );
+// Change code below this line
+// const getSortedFriends = users => [...users].flatMap;
+
+// const getNamesSortedByFriendCount = users =>
+//   [...users]
+//     .sort(
+//       (firstUser, secondUser) =>
+//         firstUser.friends.length - secondUser.friends.length,
+//     )
+//     .flatMap(user => user.name);
+
+// const sortByAscendingBalance = users =>
+//   users.sort((firstUser, secondUser) => firstUser.balance - secondUser.balance);
+
+// .sort((userFirst, userSecond) =>
+//   userFirst.name.localeCompare(userSecond.name),
+// );
+
+// console.log(
+//   [...users]
+//     .sort(
+//       (firstUser, secondUser) =>
+//         firstUser.friends.length - secondUser.friends.length,
+//     )
+//     .flatMap(user => user.name),
+// );
+// Change code above this line
 
 // const isEveryUserActive = users => users.every(user => user.isActive === true);
 
@@ -1560,3 +1601,23 @@ const sortByDescendingFriendCount = users =>
 // );
 
 // console.log(sortedByDescentingRating);
+
+const pizzaPalace = {
+  pizzas: ['Supercheese', 'Smoked', 'Four meats'],
+  // Change code below this line
+  checkPizza(pizzaName) {
+    return this.pizzas.includes(pizzaName);
+  },
+  order(pizzaName) {
+    const isPizzaAvailable = this.checkPizza(pizzaName);
+
+    if (!isPizzaAvailable) {
+      return `Sorry, there is no pizza named «${pizzaName}»`;
+    }
+
+    return `Order accepted, preparing «${pizzaName}» pizza`;
+  },
+  // Change code above this line
+};
+pizzaPalace.order('Smoked');
+pizzaPalace.order('Big Mike');
